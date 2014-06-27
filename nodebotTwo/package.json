@@ -1,0 +1,10 @@
+{
+  "name": "nodebotTwo",
+  "version": "0.0.1",
+  "description": "second example using html-js-node-arduino",
+  "dependencies": {
+    "express": "^4.4.4",
+    "socket.io": "^1.0.6",
+    "johnny-five": "^0.7.49"
+  }
+}

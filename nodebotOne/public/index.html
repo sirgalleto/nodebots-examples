@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>Nodebots</title>
+    <title>Nodebots - NodebotOne</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/foundation.css" media="screen" title="no title" charset="utf-8">
     <script src="js/vendor/modernizr.js"></script>
@@ -17,12 +17,30 @@
           $('#pinNumber').val('');
         });
 
-        $('#pin8').change(function(){
-          if($('#pin8').is(':checked')){
-            socket.emit('requestPin', 8, true);
+        $('#pin3').change(function(){
+          if($('#pin3').is(':checked')){
+            socket.emit('requestPin', 3, true);
           }
           else{
-            socket.emit('requestPin', 8, false);
+            socket.emit('requestPin', 3, false);
+          }
+
+        });
+        $('#pin5').change(function(){
+          if($('#pin5').is(':checked')){
+            socket.emit('requestPin', 5, true);
+          }
+          else{
+            socket.emit('requestPin', 5, false);
+          }
+
+        });
+        $('#pin6').change(function(){
+          if($('#pin6').is(':checked')){
+            socket.emit('requestPin', 6, true);
+          }
+          else{
+            socket.emit('requestPin', 6, false);
           }
 
         });
@@ -53,24 +71,6 @@
           }
 
         });
-        $('#pin12').change(function(){
-          if($('#pin12').is(':checked')){
-            socket.emit('requestPin', 12, true);
-          }
-          else{
-            socket.emit('requestPin', 12, false);
-          }
-
-        });
-        $('#pin13').change(function(){
-          if($('#pin13').is(':checked')){
-            socket.emit('requestPin', 13, true);
-          }
-          else{
-            socket.emit('requestPin', 13, false);
-          }
-
-        });
 
       })
 
@@ -84,14 +84,14 @@
           <h4 class="subheader">Nodebot One</h4>
         </div>
       </div>
-
+    </header>
       <br><br>
 
         <div class="row">
           <div class="large-6 columns">
             <div class="row collapse">
               <div class="small-10 columns">
-                <input type="text" placeholder="Pin" id="pinNumber">
+                <input type="text" placeholder="Strobe pin" id="pinNumber">
               </div>
               <div class="small-2 columns">
                 <a href="#" class="button postfix" id="submitPin">Ok</a>
@@ -102,11 +102,25 @@
 
         <div class="row">
           <div class="small-1 columns">
-            <h6>Pin 8:</h6>
+            <h6>Pin 3:</h6>
           </div>
           <div class="switch small-11 columns">
-            <input id="pin8" type="checkbox">
-            <label for="pin8"></label>
+            <input id="pin3" type="checkbox">
+            <label for="pin3"></label>
+          </div>
+          <div class="small-1 columns">
+            <h6>Pin 5:</h6>
+          </div>
+          <div class="switch small-11 columns">
+            <input id="pin5" type="checkbox">
+            <label for="pin5"></label>
+          </div>
+          <div class="small-1 columns">
+            <h6>Pin 6:</h6>
+          </div>
+          <div class="switch small-11 columns">
+            <input id="pin6" type="checkbox">
+            <label for="pin6"></label>
           </div>
           <div class="small-1 columns">
             <h6>Pin 9:</h6>
@@ -129,21 +143,7 @@
             <input id="pin11" type="checkbox">
             <label for="pin11"></label>
           </div>
-          <div class="small-1 columns">
-            <h6>Pin 12:</h6>
-          </div>
-          <div class="switch small-11 columns">
-            <input id="pin12" type="checkbox">
-            <label for="pin12"></label>
-          </div>
-          <div class="small-1 columns">
-            <h6>Pin 13:</h6>
-          </div>
-          <div class="switch small-11 columns">
-            <input id="pin13" type="checkbox">
-            <label for="pin13"></label>
-          </div>
         </div>
-    </header>
+
   </body>
 </html>

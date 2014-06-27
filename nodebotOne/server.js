@@ -31,7 +31,7 @@ board.on("ready", function() {
     });
 
     socket.on('strobePin', function(pin){
-      console.log('strobe in  pin ' + pin );
+      console.log('strobe pin ' + pin );
       (new five.Led(pin)).strobe(200);
     });
 
@@ -44,9 +44,6 @@ board.on("ready", function() {
 
 // Routing
 app.use(express.static(__dirname + '/public'));
-
-
-
 
 server.listen(3000, function(){
   console.log('Server listen on port 3000*');
