@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Nodebots - NodebotOne</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/foundation.css" media="screen" title="no title" charset="utf-8">
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script charset="utf-8">
+      $(document).ready(function(){
+        $('[data-slider]').on('change.fndtn.slider', function(){
+
+        });
+      })
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class= "row">
+        <div class="large-12 colums">
+          <h1> Easybots con Nodebots <small>Hackware con js en el servidor</small></h1>
+          <h4 class="subheader">Nodebot Two</h4>
+        </div>
+      </div>
+    </header>
+    <div class="row">
+      <div class="small-10 medium-11 columns">
+        <h5>Cambia el ángulo del servo:</h5>
+        <div id="slider" class="range-slider round" data-slider data-options="display_selector: #sliderOutput3; start: 1; end: 180;" >
+          <span class="range-slider-handle"></span>
+          <span class="range-slider-active-segment"></span>
+        </div>
+      </div>
+      <div class="small-2 medium-1 columns">
+        <span id="sliderOutput3"></span>
+      </div>
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation/foundation.js"></script>
+    <script src="js/foundation/foundation.slider.js"></script>
+    <script>
+    var socket = io();
+     $(document).foundation({
+       slider: {
+         on_change: function(){
+           socket.emit('servoChange', $('#slider').attr('data-slider'));
+        }
+       }
+     });
+    </script>
+  </body>
+</html>
