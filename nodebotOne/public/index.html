@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Nodebots - NodebotOne</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/foundation.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+      $(document).ready(function(){
+        var socket = io();
+
+        $('#submitPin').click(function(){
+          socket.emit('strobePin', $('#pinNumber').val());
+          $('#pinNumber').val('');
+        });
+
+        $('#pin3').change(function(){
+          if($('#pin3').is(':checked')){
+            socket.emit('requestPin', 3, true);
+          }
+          else{
+            socket.emit('requestPin', 3, false);
+          }
+
+        });
+        $('#pin5').change(function(){
+          if($('#pin5').is(':checked')){
+            socket.emit('requestPin', 5, true);
+          }
+          else{
+            socket.emit('requestPin', 5, false);
+          }
+
+        });
+        $('#pin6').change(function(){
+          if($('#pin6').is(':checked')){
+            socket.emit('requestPin', 6, true);
+          }
+          else{
+            socket.emit('requestPin', 6, false);
+          }
+
+        });
+        $('#pin9').change(function(){
+          if($('#pin9').is(':checked')){
+            socket.emit('requestPin', 9, true);
+          }
+          else{
+            socket.emit('requestPin', 9, false);
+          }
+
+        });
+        $('#pin10').change(function(){
+          if($('#pin10').is(':checked')){
+            socket.emit('requestPin', 10, true);
+          }
+          else{
+            socket.emit('requestPin', 10, false);
+          }
+
+        });
+        $('#pin11').change(function(){
+          if($('#pin11').is(':checked')){
+            socket.emit('requestPin', 11, true);
+          }
+          else{
+            socket.emit('requestPin', 11, false);
+          }
+
+        });
+
+      })
+
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class= "row">
+        <div class="large-12 colums">
+          <h1> Easybots con Nodebots <small>Hackware con js en el servidor</small></h1>
+          <h4 class="subheader">Nodebot One</h4>
+        </div>
+      </div>
+    </header>
+      <br><br>
+
+        <div class="row">
+          <div class="large-6 columns">
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input type="text" placeholder="Strobe pin" id="pinNumber">
+              </div>
+              <div class="small-2 columns">
+                <a href="#" class="button postfix" id="submitPin">Ok</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="small-1 columns">
+            <h6>Pin 3:</h6>
+          </div>
+          <div class="switch small-11 columns">
+            <input id="pin3" type="checkbox">
+            <label for="pin3"></label>
+          </div>
+          <div class="small-1 columns">
+            <h6>Pin 5:</h6>
+          </div>
+          <div class="switch small-11 columns">
+            <input id="pin5" type="checkbox">
+            <label for="pin5"></label>
+          </div>
+          <div class="small-1 columns">
+            <h6>Pin 6:</h6>
+          </div>
+          <div class="switch small-11 columns">
+            <input id="pin6" type="checkbox">
+            <label for="pin6"></label>
+          </div>
+          <div class="small-1 columns">
+            <h6>Pin 9:</h6>
+          </div>
+          <div class="switch small-11 columns">
+            <input id="pin9" type="checkbox">
+            <label for="pin9"></label>
+          </div>
+          <div class="small-1 columns">
+            <h6>Pin 10:</h6>
+          </div>
+          <div class="switch small-11 columns">
+            <input id="pin10" type="checkbox">
+            <label for="pin10"></label>
+          </div>
+          <div class="small-1 columns">
+            <h6>Pin 11:</h6>
+          </div>
+          <div class="switch small-11 columns">
+            <input id="pin11" type="checkbox">
+            <label for="pin11"></label>
+          </div>
+        </div>
+
+  </body>
+</html>
