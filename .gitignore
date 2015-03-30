@@ -1,0 +1,5 @@
+johnny-five/node_modules
+nodebotOne/node_modules
+nodebotTwo/node_modules
+nodebotThree/node_modules
+*.DS_Store 
